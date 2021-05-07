@@ -32,4 +32,6 @@ workflows:
  TestWorkflow:
     jobs:
       - Hello-World
- 
+      - Run-After-Hello:
+          requires:
+            - Hello-World
