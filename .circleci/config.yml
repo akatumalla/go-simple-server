@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/node:10-browsers #alpine:3.7
     steps:
       - checkout
       - run:
@@ -11,7 +11,11 @@ jobs:
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
       - run:
-          name: code
+          name: List code contents 
           command: |
             echo 'This is where the code is read'
             ls -la
+      - run:
+          name: Container feature
+          command: |
+            node -v
