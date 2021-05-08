@@ -8,7 +8,9 @@ workflows:
   version: 2.1
   build-copy-deploy:
     jobs:
-      - build-copy
+      - build-copy:
+           context:
+             - aws-go-deploy
       # - deploy:
       #     requires:
       #       - build-copy
