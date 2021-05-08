@@ -51,11 +51,11 @@ jobs:
             go build -o circleci
             
       - aws-s3/copy:
-          aws-access-key-id: AWS_ACCESS_KEY_ID_BLUE
-          aws-region: AWS_ACCESS_KEY_ID_BLUE
-          aws-secret-access-key: AWS_ACCESS_KEY_ID_BLUE
+          aws-access-key-id: AWS_ACCESS_KEY
+          aws-region: AWS_REGION
+          aws-secret-access-key: AWS_SECRET_KEY
           from: circleci
-          to: 's3://my-s3-bucket-name/prefix'
+          to: 's3://circle-ci-gobuild'
           #overwrite: true # default false
 
       - save_cache:
