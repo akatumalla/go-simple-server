@@ -4,21 +4,21 @@ orbs:
   aws-s3: circleci/aws-s3@2.0.0
   aws-code-deploy: circleci/aws-code-deploy@2.0.0
 
-workflows:
-  version: 2.1
-  build-copy-deploy:
-    jobs:
-      - build-copy:
-           context:
-             - aws-go-deploy
-      # - deploy:
-      #     requires:
-      #       - build-copy
-      #     filters:
-      #       branches:
-      #         only: main
+# workflows:
+#   version: 2.1
+#   build-copy-deploy:
+#     jobs:
+#       - build-copy:
+#            context:
+#              - aws-go-deploy
+#       # - deploy:
+#       #     requires:
+#       #       - build-copy
+#       #     filters:
+#       #       branches:
+#       #         only: main
 jobs:
-  build-copy:
+  build:
     docker:
       - image: circleci/golang:1.16.3-browsers
     
