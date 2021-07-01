@@ -13,7 +13,7 @@ import (
 )
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("<h1>Simple Go server deployed using CircleCI!</h1>"))
+	w.Write([]byte("<h1>Simple Go server deployed using Terraform, Ansible and CircleCI!</h1>"))
 }
 
 func main() {
