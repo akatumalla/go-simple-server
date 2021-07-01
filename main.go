@@ -18,23 +18,8 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-	err := godotenv.Load()
-
-	if err != nil {
-
-		log.Println("Error loading .env file")
-
-	}
-
-
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "11000"
-	}
-
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", indexHandler)
-	http.ListenAndServe(":"+port, mux)
+	http.ListenAndServe(":"+"80", mux)
 }
-
